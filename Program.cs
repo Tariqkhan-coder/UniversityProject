@@ -1,10 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using System;
-using webapi.InjectServices;
+using webapi.Injections;
 using webapi.University_context;
 
-
-namespace UniversityProject
+namespace University
 {
     public class Program
     {
@@ -13,10 +11,10 @@ namespace UniversityProject
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<UniversityContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityContext")));
             builder.Services.AddControllers();
-            builder.Services.AddCustomServices();
 
 
             // Add services to the container.
+            builder.Services.AddCustomServices();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -8,12 +8,13 @@ namespace webapi.University_context
         {
 
         }
-        public DbSet<University> UniversityDetails { get; set; }
-        public DbSet<Teacher> TeacherDetails { get; set; }
-        public DbSet<Student> StudentDetails { get; set; }
-        public DbSet<Department> DepartmentDetails { get; set; }
-        public DbSet<Employee> EmployeeDetails { get; set; }
+
+
        
+
+        public DbSet<User> Userdetails { get; set; }
+
+
 
 
 

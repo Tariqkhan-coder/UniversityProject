@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapi.University_context;
 
@@ -10,9 +11,10 @@ using webapi.University_context;
 namespace webapi.Migrations
 {
     [DbContext(typeof(UniversityContext))]
-    partial class UniversityContextModelSnapshot : ModelSnapshot
+    [Migration("20240801015039_dd")]
+    partial class dd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,9 +39,6 @@ namespace webapi.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
 
-                    b.Property<long>("UniversityId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("DepartmentId");
 
                     b.ToTable("DepartmentDetails");
@@ -53,6 +52,9 @@ namespace webapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EmpId"), 1L, 1);
 
+                    b.Property<long>("DepartmentId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
@@ -60,9 +62,6 @@ namespace webapi.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
-
-                    b.Property<long>("UniversityId")
-                        .HasColumnType("bigint");
 
                     b.HasKey("EmpId");
 
@@ -121,9 +120,6 @@ namespace webapi.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
 
-                    b.Property<long>("UniversityId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("lastName")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
@@ -160,9 +156,6 @@ namespace webapi.Migrations
                     b.Property<string>("TeacherName")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(50)");
-
-                    b.Property<long>("UniversityId")
-                        .HasColumnType("bigint");
 
                     b.HasKey("TeacherId");
 

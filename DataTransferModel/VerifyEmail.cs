@@ -2,10 +2,11 @@
 
 namespace webapi.DataTransferModel
 {
-    public class GetStudents
+    public class VerifyEmail
     {
-        public long StudentId { get; set; }
+
      
-       
+        public string Email { get; set; } = "";
+     
     }
 }
